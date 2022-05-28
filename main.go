@@ -1,11 +1,13 @@
 package main
 
 import (
+	"github.com/alibaba/ioc-golang"
 	"github.com/alibaba/ioc-golang/autowire"
 	"github.com/alibaba/ioc-golang/config"
 	"github.com/fatih/color"
 	_ "github.com/photowey/helloioc/internal/email"
 	"github.com/photowey/helloioc/internal/order"
+	"github.com/photowey/helloioc/internal/payment"
 	_ "github.com/photowey/helloioc/internal/sms"
 )
 
@@ -16,6 +18,7 @@ func main() {
 	printConfig()
 
 	order.Run()
+	payment.Run()
 }
 
 func printConfig() {
@@ -27,7 +30,7 @@ func printConfig() {
 func loadIoC() error {
 	nameOpt := config.WithConfigName("ioc_golang")
 	typeOpt := config.WithConfigType("yaml")
-	err := config.Load(nameOpt, typeOpt)
+	err := ioc.Load(nameOpt, typeOpt)
 	if err != nil {
 		panic(err)
 	}
