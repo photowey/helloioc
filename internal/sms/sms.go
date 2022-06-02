@@ -2,13 +2,12 @@ package sms
 
 // +ioc:autowire=true
 // +ioc:autowire:type=singleton
-// +ioc:autowire:interface=github.com/photowey/helloioc/internal/message.Message
 
 type Sender struct {
 }
 
 func (sender *Sender) Channel() string {
-	return "email"
+	return "sms"
 }
 
 func (sender *Sender) Content() string {

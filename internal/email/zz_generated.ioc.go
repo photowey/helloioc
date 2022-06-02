@@ -8,12 +8,10 @@ package email
 import (
 	"github.com/alibaba/ioc-golang/autowire"
 	"github.com/alibaba/ioc-golang/autowire/singleton"
-	"github.com/photowey/helloioc/internal/message"
 )
 
 func init() {
 	singleton.RegisterStructDescriptor(&autowire.StructDescriptor{
-		Interface: new(message.Message),
 		Factory: func() interface{} {
 			return &Sender{}
 		},

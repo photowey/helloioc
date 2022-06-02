@@ -1,2 +1,21 @@
 hello:
   ioc: "helloioc"
+
+autowire:
+  singleton:
+    RedisAlias:
+      param:
+        RedisAddr: 192.168.1.11:6379
+  normal:
+    github.com/alibaba/ioc-golang/extension/normal/redis.Impl:
+      db1-redis:
+        param:
+          address: 192.168.1.11:6379
+          db: 1
+      db2-redis:
+        param:
+          address: 192.168.1.11:6379
+          db: 2
+      param:
+        address: 192.168.1.11:6379
+        db: 0

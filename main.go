@@ -8,6 +8,7 @@ import (
 	_ "github.com/photowey/helloioc/internal/email"
 	"github.com/photowey/helloioc/internal/order"
 	"github.com/photowey/helloioc/internal/payment"
+	"github.com/photowey/helloioc/internal/redis"
 	_ "github.com/photowey/helloioc/internal/sms"
 )
 
@@ -19,6 +20,7 @@ func main() {
 
 	order.Run()
 	payment.Run()
+	redis.Run()
 }
 
 func printConfig() {

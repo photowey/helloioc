@@ -16,6 +16,6 @@ type Payment struct {
 func Run() {
 	paymentI, _ := singleton.GetImpl("github.com/photowey/helloioc/internal/payment.Payment")
 	payment := paymentI.(*Payment)
-	payment.OrderAliasField.SenderSms.Channel()
-	payment.OrderFullNameField.SenderSms.Channel()
+	payment.OrderAliasField.SenderSms.Target()
+	payment.OrderFullNameField.SenderSms.Target()
 }
