@@ -17,7 +17,8 @@ func init() {
 			return &Hello{}
 		},
 		ConstructFunc: func(i interface{}, p interface{}) (interface{}, error) {
-			return New(), nil
+			constructor := DefaultConstructor()
+			return constructor(), nil
 		},
 	})
 	singleton.RegisterStructDescriptor(&autowire.StructDescriptor{
@@ -39,4 +40,12 @@ func init() {
 
 type paramInterface interface {
 	Init(impl *World) (*World, error)
+}
+
+type HelloNoArgsConverter func() *Hello
+
+func DefaultConstructor() HelloNoArgsConverter {
+	return func() *Hello {
+		return New()
+	}
 }
