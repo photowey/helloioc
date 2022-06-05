@@ -17,7 +17,7 @@ func init() {
 			return &Hello{}
 		},
 		ConstructFunc: func(i interface{}, p interface{}) (interface{}, error) {
-			constructor := DefaultConstructor()
+			constructor := HelloDefaultConstructor()
 			return constructor(), nil
 		},
 	})
@@ -44,7 +44,7 @@ type paramInterface interface {
 
 type HelloNoArgsConverter func() *Hello
 
-func DefaultConstructor() HelloNoArgsConverter {
+func HelloDefaultConstructor() HelloNoArgsConverter {
 	return func() *Hello {
 		return New()
 	}
