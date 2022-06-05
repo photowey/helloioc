@@ -12,7 +12,7 @@ import (
 
 func init() {
 	singleton.RegisterStructDescriptor(&autowire.StructDescriptor{
-		Alias: "AppAlias",
+		Alias: "HelloAlias",
 		Factory: func() interface{} {
 			return &Hello{}
 		},
@@ -22,7 +22,7 @@ func init() {
 		},
 	})
 	singleton.RegisterStructDescriptor(&autowire.StructDescriptor{
-		Alias: "AppAlias",
+		Alias: "WorldAlias",
 		Factory: func() interface{} {
 			return &World{}
 		},

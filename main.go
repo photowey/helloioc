@@ -5,10 +5,10 @@ import (
 	"github.com/alibaba/ioc-golang/autowire"
 	"github.com/alibaba/ioc-golang/config"
 	"github.com/fatih/color"
+	"github.com/photowey/helloioc/internal/defaultconstructor"
 	_ "github.com/photowey/helloioc/internal/email"
 	"github.com/photowey/helloioc/internal/order"
 	"github.com/photowey/helloioc/internal/payment"
-	"github.com/photowey/helloioc/internal/redis"
 	_ "github.com/photowey/helloioc/internal/sms"
 )
 
@@ -20,7 +20,8 @@ func main() {
 
 	order.Run()
 	payment.Run()
-	redis.Run()
+	// redis.Run()
+	defaultconstructor.Run()
 }
 
 func printConfig() {

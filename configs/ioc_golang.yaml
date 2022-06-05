@@ -6,6 +6,9 @@ autowire:
     RedisAlias:
       param:
         RedisAddr: 192.168.1.11:6379
+    WorldAlias:
+      param:
+        language: "Go"
   normal:
     github.com/alibaba/ioc-golang/extension/normal/redis.Impl:
       db1-redis:
