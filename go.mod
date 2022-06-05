@@ -3,7 +3,7 @@ module github.com/photowey/helloioc
 go 1.18
 
 require (
-	github.com/alibaba/ioc-golang v0.0.0-20220523151625-adb3befe6a44
+	github.com/alibaba/ioc-golang v0.0.0-20220602125356-442be4ea013d
 	github.com/fatih/color v1.13.0
 	github.com/go-redis/redis v6.15.9+incompatible
 )
